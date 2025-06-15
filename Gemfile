@@ -1,56 +1,67 @@
-source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+source "https://rubygems.org"
 
-ruby '2.7.5'
+ruby "3.4.4"
 
-# Em vez disso, inclua o Rails edge: gem ‘rails’, github: ‘rails/rails’, branch: ‘main’
-gem 'rails', '~> 6.1.7'
-# Usei sqlite3 como banco de dados para Active Record
-gem 'sqlite3', '~> 1.4'
-# Usei Puma como servidor de aplicativos
-gem 'puma', '~> 5.0'
-# Usei SCSS para folhas de estilo
-gem 'sass-rails', '>= 6'
-# Transpile JavaScript semelhante a aplicativos. Leia mais: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.0'
-# O Turbolinks torna a navegação em no aplicativo web mais rápida. Leia mais: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Criei APIs JSON: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
-# Usei o adaptador Redis para executar o Action Cable em produção
-# gem 'redis', '~> 4.0'
-# Usei o Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 
-# Variante Active Storage
-# gem 'image_processing', '~> 1.2'
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
 
-# Reduz o tempo de inicialização por meio do cache, necessário em config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
+
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", ">= 5.0"
+
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
+
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
+
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
+
+# Use Redis adapter to run Action Cable in production
+# gem "redis", ">= 4.0.1"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ windows jruby ]
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # Chama ‘byebug’ em qualquer lugar do código para interromper a execução e obter um console de depuração
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
-end
-
-group :test do
-  gem 'factory_bot_rails'
-  gem 'shoulda-matchers'
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri windows ]
 end
 
 group :development do
-   # Acesse um console interativo em páginas de exceção ou chamando ‘console’ em qualquer lugar do código.
-  gem 'web-console', '>= 4.1.0'
-  # Exiba informações de desempenho, como tempo SQL e gráficos de chama para cada solicitação no seu navegador.
-  # Pode ser configurado para funcionar também em produção, consulte: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
-  gem 'listen', '~> 3.3'
-  # O Spring acelera o desenvolvimento, mantendo seu aplicativo em execução em segundo plano. Leia mais: https://github.com/rails/sprin
-  gem 'spring'
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
+
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
 end
 
-# O Windows não inclui arquivos zoneinfo, portanto, inclua o gem tzinfo-data
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "devise", "~> 4.8"
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+end
