@@ -26,7 +26,7 @@ class TodoItemsController < ApplicationController
 
     respond_to do |format|
       if @todo_item.save
-        format.html { redirect_to @todo_item, notice: "item criado com sucesso." }
+        format.html { redirect_to @todo_item, notice: "item criado com sucesso" }
         format.json { render :show, status: :created, location: @todo_item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class TodoItemsController < ApplicationController
   def update
     respond_to do |format|
       if @todo_item.update(todo_item_params)
-        format.html { redirect_to @todo_item, notice: "item atualizado com sucesso." }
+        format.html { redirect_to @todo_item, notice: "item atualizado com sucesso" }
         format.json { render :show, status: :ok, location: @todo_item }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class TodoItemsController < ApplicationController
     @todo_item.destroy!
 
     respond_to do |format|
-      format.html { redirect_to todo_items_path, status: :see_other, notice: "item deletado com sucesso." }
+      format.html { redirect_to todo_items_path, status: :see_other, notice: "item deletado com sucesso" }
       format.json { head :no_content }
     end
   end
