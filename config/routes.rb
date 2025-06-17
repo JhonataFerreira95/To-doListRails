@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :todo_items
-  resources :todo_lists
+  resources :todo_lists do # Para seguir o padrão e aninha por ordem o todo_list a após o todo_items
+    resources :todo_items
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
