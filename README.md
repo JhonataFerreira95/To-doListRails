@@ -1,26 +1,36 @@
-# To-doListRails
+# Documentação da aplicação Todo-List com RubyOnRails-7.1.5 e Postgres-17
 
-# README
+```bash
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+├── .ruby-lsp/
+├── app/
+│ ├── assets/
+│ ├── channels/
+│ ├── controllers/
+│ ├── helpers/
+│ ├── jobs/
+│ ├── mailers/
+│ ├── models/
+│ ├── views/
+├── bin/
+├── config/
+├── db/
+├── lib/
+├── log/
+├── public/
+├── storage/
+├── test/
+├── tmp/
+├── vendor/
+├── .dockerignore
+├── .gitattributes
+├── .gitignore
+├── .ruby-version
+├── config.ru
+├── Dockerfile
+├── Gemfile
+├── Gemfile.lock
+├── Rakefile
+└── README.md
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
