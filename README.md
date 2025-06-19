@@ -112,3 +112,13 @@ default: &default
 ```
 
 ## RollBack do banco
+
+Aqui é algo breve, porém importante. Caso seja desejado alterar as tabela na mão via arquivo do `schema.rb`, usei o `rails rollback` para voltar a versão anterior, adc o que deseja após use o `db:migrate` 
+
+### Rollback
+
+```bash
+
+rails rollback
+
+```
