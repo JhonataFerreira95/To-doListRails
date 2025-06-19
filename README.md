@@ -1,5 +1,10 @@
 # Documentação da aplicação Todo-List com RubyOnRails-7.1.5 e Postgres-17
 
+## Introdução breve...
+
+Como meu projeto em flask <code><img width="40" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/flask.png" alt="Flask" title="Flask"/></code> foi considerado insuficiente, foi solicitado a criação do mesmo, mas com minha stack príncipal que é RubyOnRails <code><img width="40" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ruby_on_rails.png" alt="Ruby on Rails" title="Ruby on Rails"/></code>, apesar de não domina o framework de ponta a ponta nem ter um conhecimetno 100% gostaria de me provar nessa aplicação. 
+
+
 ## Estrutura do projeto
 
 ```bash
