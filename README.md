@@ -46,6 +46,7 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 1. [Criação da estrutura do projeto e as Gems](#criação-da-estrutura-e-gems)
 2. [Utilizando o scaffoding](#uso-de-scaffold)
 3. [Troca de banco](#troca-de-banco)
+4. [Rollback de banco](#rollback-do-banco)
 
 ## Criação da estrutura, Gems e Tailwind
 
@@ -69,3 +70,45 @@ rails g scaffold todo-item todo-list:belongto text completed:boolean
 
 ## Troca de banco
 
+Por padrão o `scaffold` faz a criação das tabela do banco para o `SQLITE`, sendo assim de forma local. Utilizei no Gemfile a `gem pg` para usar o postgres. Após o uso do Gem no Gemfile usei o `bundle install` para atulizar e installar nova dependências do projeto. Mudei o banco de forma simples, como o scaffold já criou minhas tabelas locais basta apenas miagra com um `db:migrate`, isso após preencher os parâmetros no `database.yml` para a conexão do seu usuario com o postgres, utilizei o default, já que não irei utlizar de gitflow.
+
+### Gem do postgres
+
+```bash
+
+gem 'pg', '~> 1.5', '>= 1.5.6'
+
+```
+
+### Bundle
+
+```bash
+
+bundle install
+
+```
+
+### Migrar as tabelas
+
+```bash
+
+db:migrate
+
+```
+
+### Conexão com o banco
+
+```bash
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: seu usuario
+  password: sua senha
+  host: seu host
+  port: porta
+
+```
+
+## RollBack do banco
