@@ -2,7 +2,7 @@
 
 ## Introdução breve...
 
-Como meu projeto em flask <code><img width="40" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/flask.png" alt="Flask" title="Flask"/></code> foi considerado insuficiente, foi solicitado a criação do mesmo, mas com minha stack príncipal que é RubyOnRails <code><img width="40" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ruby_on_rails.png" alt="Ruby on Rails" title="Ruby on Rails"/></code>, apesar de não domina o framework de ponta a ponta nem ter um conhecimetno 100% gostaria de me provar nessa aplicação. 
+Como meu projeto em flask <code><img width="40" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/flask.png" alt="Flask" title="Flask"/></code> foi considerado insuficiente, foi solicitado a criação do mesmo, mas com minha stack príncipal que é RubyOnRails <code><img width="40" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ruby_on_rails.png" alt="Ruby on Rails" title="Ruby on Rails"/></code>, apesar de não domina o framework de ponta a ponta nem ter um conhecimetno 100%, gostaria de me provar nessa aplicação. 
 
 
 ## Estrutura do projeto
@@ -58,7 +58,7 @@ rails new to-doListRails --database=postgres --css=tailwind
 
 ```
 
-## Uso de Scaffold
+## Uso de Scaffolding
 
 O `scaffold` é um comando CLI do Rails para criar arquitetura MVC de uma forma simples e prática, aplicando diretamente, com base nos atributos infromados. No meu caso foi a criação de duas tabelas e uma enum com valor boolean para `true` e `false`. Por padrão o Scaffold usa o SQLITE e como foi pedido alterei para o postgres na próxima seção falo melhor osbre a mudança.
 
