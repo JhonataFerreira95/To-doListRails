@@ -102,7 +102,7 @@ db:migrate
 ```bash
 
 default: &default
-  adapter: postgresql
+  adapter: postgresql # Aptar para o seu banco (MySQL, SQLITE, POSTGRES, MARIADB...)
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: seu usuario
@@ -126,7 +126,7 @@ rails rollback
 
 ## Problemas com o TailwindCSS
 
-Algumas complicações na instalação padrão o TailwindCSS ficou corrompido, achei que tinha sido a versão do `rails` e a `gem tailwind` estava atualizada para versão mais nova, porém para minha supresa não foi, executei novamente o comando `CLI` para reinstalar o tailwind e felizmente sucesso. Carregou todos os styles dentro dos arquivos `html.erb`
+Algumas complicações na instalação padrão do TailwindCSS, ficou corrompido. Presume que tinha sido a versão do `rails` e a `gem tailwind` estava atualizada para versão mais nova, porém para minha supresa não foi, executei novamente o comando `CLI` para reinstalar o tailwind e felizmente sucesso. Carregou todos os styles dentro dos arquivos `html.erb`
 
 ```bash 
 
