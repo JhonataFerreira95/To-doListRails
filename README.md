@@ -41,12 +41,13 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 └── README.md
 
 ```
-## Índice
+## Índices
 
 1. [Criação da estrutura do projeto e as Gems](#criação-da-estrutura-e-gems)
 2. [Utilizando o scaffoding](#uso-de-scaffold)
 3. [Troca de banco](#troca-de-banco)
 4. [Rollback de banco](#rollback-do-banco)
+5. [Problemas com o TailwindCSS](#problemas-com-o-tailwindcss)
 
 ## Criação da estrutura, Gems e Tailwind
 
@@ -120,5 +121,15 @@ Aqui é algo breve, porém importante. Caso seja desejado alterar as tabela na m
 ```bash
 
 rails rollback
+
+```
+
+## Problemas com o TailwindCSS
+
+Algumas complicações na instalação padrão o TailwindCSS ficou corrompido, achei que tinha sido a versão do `rails` e a `gem tailwind` estava atualizada para versão mais nova, porém para minha supresa não foi, executei novamente o comando `CLI` para reinstalar o tailwind e felizmente sucesso. Carregou todos os styles dentro dos arquivos `html.erb`
+
+```bash 
+
+bin/rails tailwindcss:install
 
 ```
