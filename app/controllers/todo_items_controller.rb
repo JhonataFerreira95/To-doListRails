@@ -60,7 +60,7 @@ class TodoItemsController < ApplicationController
 
   private
     def set_todo_list
-
+      todo_list = TodoList.find(params[:todo_list_id]) # adc o todo_list para puxa as listas por id uma dentro da outra
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_item
