@@ -1,43 +1,38 @@
-<% content_for :title, "Minhas Listas de Tarefas" %>
+<% content_for :title, "Itens da Lista: #{@todo_list.name}" %>
 
 <div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
   <div class="flex justify-between items-center mb-6">
-    <h1 class="font-bold text-4xl">Minhas Listas de Tarefas</h1>
-    <%= link_to "Nova lista", new_todo_list_path,
-        class: "rounded-md px-3.5 py-2.5 bg-green-600 hover:bg-green-500 text-white font-medium" %>
+    <h1 class="font-bold text-4xl">Itens da Lista: <%= @todo_list.name %></h1>
+
+    <%= link_to "Novo item", new_todo_list_todo_item_path(@todo_list),
+        class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium" %>
   </div>
 
-  <div id="todo_lists" class="space-y-5">
-    <% if @todo_lists.any? %>
-      <% @todo_lists.each do |todo_list| %>
+  <div id="todo_items" class="space-y-5">
+    <% if @todo_items.any? %>
+      <% @todo_items.each do |todo_item| %>
         <div class="flex flex-col sm:flex-row justify-between items-center p-5 bg-white rounded-lg shadow">
-          
-          <!-- título da lista -->
-          <h2 class="text-2xl font-semibold">
-            <%= todo_list.name %>
-          </h2>
+          <p class="text-lg"><%= todo_item.text %></p>
 
           <div class="flex space-x-2 mt-4 sm:mt-0">
-            <!-- 1️⃣ Link errado (causava /todo_lists/todo_items):
-                 <%= link_to "Ver itens", todo_list_path(todo_list), class: "..." %>
-               
-                 2️⃣ Link CORRETO:
-                 direciona para /todo_lists/:todo_list_id/todo_items
-            -->
-            <%= link_to "Ver itens", todo_list_todo_items_path(todo_list),
-                class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium" %>
-            
-            <%= link_to "Editar lista", edit_todo_list_path(todo_list),
+            <%= link_to "Exibir", todo_list_todo_item_path(@todo_list, todo_item),
                 class: "rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 font-medium" %>
-            
-            <%= button_to "Excluir lista", todo_list_path(todo_list), method: :delete,
+
+            <%= link_to "Editar", edit_todo_list_todo_item_path(@todo_list, todo_item),
+                class: "rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 font-medium" %>
+
+            <%= button_to "Excluir", todo_list_todo_item_path(@todo_list, todo_item), method: :delete,
                 data: { turbo_confirm: "Tem certeza?" },
                 class: "rounded-md px-3.5 py-2.5 bg-red-600 hover:bg-red-500 text-white font-medium" %>
           </div>
         </div>
       <% end %>
     <% else %>
-      <p class="text-center my-10">Nenhuma lista encontrada.</p>
+      <p class="text-center my-10">Nenhum item encontrado nesta lista.</p>
     <% end %>
   </div>
 </div>

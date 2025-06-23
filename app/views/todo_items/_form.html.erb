@@ -1,7 +1,7 @@
-<%= form_with(model: todo_item, class: "contents") do |form| %>
+<%= form_with(model: [@todo_list, todo_item], class: "contents") do |form| %>
   <% if todo_item.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(todo_item.errors.count, "error") %> prohibited this todo_item from being saved:</h2>
+      <h2><%= pluralize(todo_item.errors.count, "erro") %> impediram o salvamento do item:</h2>
 
       <ul class="list-disc ml-6">
         <% todo_item.errors.each do |error| %>
@@ -12,18 +12,16 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :todo_list_id %>
-    <%= form.text_field :todo_list_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": todo_item.errors[:todo_list_id].none?, "border-red-400 focus:outline-red-600": todo_item.errors[:todo_list_id].any?}] %>
+    <%= form.label :text, "Descrição do Item" %>
+    <%= form.text_field :text, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {
+          "border-gray-400 focus:outline-blue-600": todo_item.errors[:text].none?,
+          "border-red-400 focus:outline-red-600": todo_item.errors[:text].any?
+        }] %>
   </div>
 
   <div class="my-5">
-    <%= form.label :text %>
-    <%= form.text_field :text, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": todo_item.errors[:text].none?, "border-red-400 focus:outline-red-600": todo_item.errors[:text].any?}] %>
-  </div>
-
-  <div class="my-5 flex items-center gap-2">
-    <%= form.label :completed %>
-    <%= form.check_box :completed, class: ["block shadow-sm rounded-md border order-first h-5 w-5", {"border-gray-400 focus:outline-blue-600": todo_item.errors[:completed].none?, "border-red-400 focus:outline-red-600": todo_item.errors[:completed].any?}] %>
+    <%= form.label :completed, "Concluído?" %>
+    <%= form.check_box :completed %>
   </div>
 
   <div class="inline">
