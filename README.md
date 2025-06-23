@@ -112,6 +112,15 @@ default: &default
   port: porta
 
 ```
+### Seu usuário do postgresSQL
+
+Caso você não saiba seu usuário do postgres utilize o comando abaixo
+
+```bash
+
+SELECT current_user;
+
+```
 
 ## RollBack do banco
 
