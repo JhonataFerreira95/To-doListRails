@@ -114,7 +114,7 @@ default: &default
 ```
 ### Seu usuário do postgresSQL
 
-Caso você não saiba seu usuário do postgres utilize o comando abaixo
+Caso você não saiba seu usuário do postgres utilize o comando abaixo no pgadmin
 
 ```bash
 
