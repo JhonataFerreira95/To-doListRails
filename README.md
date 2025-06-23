@@ -48,6 +48,7 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 3. [Troca de banco](#troca-de-banco)
 4. [Rollback de banco](#rollback-do-banco)
 5. [Problemas com o TailwindCSS](#problemas-com-o-tailwindcss)
+6. [Problemas com rotas aninhadas](#problemas-com-as-rotas-aninhadas-no-todo_items)
 
 ## Criação da estrutura, Gems e Tailwind
 
@@ -131,5 +132,33 @@ Algumas complicações na instalação padrão do TailwindCSS, ficou corrompido.
 ```bash 
 
 bin/rails tailwindcss:install
+
+```
+
+## Problemas com as rotas aninhadas no Todo_items
+
+Bem, eu queria colocar para fica de uma forma ordenada, onde para ver o item você deve passar pelas lista primeiro, já que é a lógica `Todo_list -> Todo_items`, meu erro foi ter esquecido que `Todo_list` é o pai de `Todo_items`, já que agora eu coloquei o `Todo_items` dentro de `Todo_list`, e passei na rota.
+
+### Rota
+```bash
+
+Rails.application.routes.draw do # Para seguir o padrão e aninha por ordem o todo_list a após o todo_items
+  resources :todo_lists do # Pai 
+    resources :todo_items # Filho
+  end
+
+  get "up" => "rails/health#show", as: :rails_health_check # Nosso end point HTTP
+
+end
+
+```
+
+### Passando os parâmentros em html.erb
+
+Um exemplo de heranção para a funcionalidade dos items que dependem totalmente da lista.
+
+```html.erb
+
+<%= form_with(model: [@todo_list, todo_item], class: "contents") do |form| %>
 
 ```
