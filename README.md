@@ -49,7 +49,7 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 4. [Rollback de banco](#rollback-do-banco)
 5. [Problemas com o TailwindCSS](#problemas-com-o-tailwindcss)
 6. [Problemas com rotas aninhadas](#problemas-com-as-rotas-aninhadas-no-todo_items)
-7. [Novo método usado no destroy]
+7. [Novo método usado no destroy](#novo-método-adc-ao-destroy)
 
 ## Criação da estrutura, Gems e Tailwind
 
