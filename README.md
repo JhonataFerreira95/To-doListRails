@@ -49,6 +49,7 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 4. [Rollback de banco](#rollback-do-banco)
 5. [Problemas com o TailwindCSS](#problemas-com-o-tailwindcss)
 6. [Problemas com rotas aninhadas](#problemas-com-as-rotas-aninhadas-no-todo_items)
+7. [Novo método usado no destroy]
 
 ## Criação da estrutura, Gems e Tailwind
 
@@ -171,3 +172,23 @@ Um exemplo de heranção para a funcionalidade dos items que dependem totalmente
 <%= form_with(model: [@todo_list, todo_item], class: "contents") do |form| %>
 
 ```
+
+## Novo método adc ao destroy
+
+Havia um eve problema quando acontecia a exclusão de um item, já que o usuário ficava na página antiga de itens e não volta para a sua lista de origem, então foi adicionado ao destroy. 
+
+### Chamando o método no controller 
+
+```bash
+
+def destroy
+  @todo_item.destroy # remove o item do banco de dados
+  respond_to do |format| # Depois, o usuário é redirecionado para a página da lista
+    format.html { redirect_to todo_list_path(@todo_list), notice: "Item excluído com sucesso." } # Uma mensagem de sucesso é exibida
+    format.json { head :no_content }
+  end
+end
+
+```
+Deixa claro que antes de executar o destroy, Rails executa os métodos `set_todo_list` para carregar a lista correta com base no `todo_list_id` da URL e `set_todo_item` para carregar o item correto dentro da lista
+
