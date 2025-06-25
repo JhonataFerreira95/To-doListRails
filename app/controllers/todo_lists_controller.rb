@@ -8,6 +8,8 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists/1 or /todo_lists/1.json
   def show
+    @todo_item = @todo_list.todo_items.build
+  @todo_items = @todo_list.todo_items.order(created_at: :asc)
   end
 
   # GET /todo_lists/new

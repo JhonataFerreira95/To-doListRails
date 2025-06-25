@@ -9,7 +9,24 @@
 
   <%= render @todo_list %>
 
+  <%= turbo_frame_tag :new_todo_item do %>
+    <%= render "todo_items/form", todo_item: @todo_item %>
+  <% end %>
+
+  <!-- Lista de itens -->
+  <div class="mt-8">
+  <h2 class="font-bold text-2xl mb-4">Itens da lista</h2>
+<% @todo_items.each do |item| %>
+  <div class="mb-2 p-3 bg-gray-50 rounded flex items-center justify-between">
+    <span class="block flex-1 min-w-0"><%= item.text %></span>
+    <div class="flex gap-4">
+      <%= link_to "Exibir", todo_list_todo_item_path(@todo_list, item), class: "text-white bg-blue-600 hover:bg-blue-500 rounded-md px-3.5 py-2.5 font-medium" %>
+      <%= link_to "Editar", edit_todo_list_todo_item_path(@todo_list, item), class: "text-white bg-yellow-500 hover:bg-yellow-400 rounded-md px-3.5 py-2.5 font-medium" %>
+      <%= button_to "Excluir", todo_list_todo_item_path(@todo_list, item), method: :delete, data: { turbo_confirm: "Tem certeza?" }, class: "text-white bg-red-600 hover:bg-red-500 rounded-md px-3.5 py-2.5 font-medium border-none cursor-pointer" %>
+    </div>
+  </div>
+<% end %>
+
   <%= link_to "Editar essa lista", edit_todo_list_path(@todo_list), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
   <%= link_to "Volta para as listas", todo_lists_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
   <%= button_to "Excluir essa lista", @todo_list, method: :delete, form_class: "sm:inline-block mt-2 sm:mt-0 sm:ml-2", class: "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Tem certeza?" } %>
-</div>

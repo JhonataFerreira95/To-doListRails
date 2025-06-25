@@ -1,9 +1,13 @@
-<% content_for :title, "Novo item na lista" %>
+<%= turbo_frame_tag :new_todo_item do %>
 
-<div class="md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Novo item na lista</h1>
+  <% content_for :title, "Novo item na lista" %>
 
-  <%= render "form", todo_item: @todo_item %>
+  <div class="md:w-2/3 w-full">
+    <h1 class="font-bold text-4xl">Novo item na lista</h1>
 
-  <%= link_to "Voltar para os itens da lista", todo_list_todo_items_path(@todo_list), class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-</div>
+    <%= render "form", todo_item: @todo_item %>
+
+    <%= link_to "Voltar para os itens da lista", todo_list_todo_items_path(@todo_list), class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  </div>
+  
+<% end %>
