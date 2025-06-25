@@ -49,14 +49,14 @@ class TodoItemsController < ApplicationController
   end
 
   # DELETE /todo_lists/:todo_list_id/todo_items/:id
-  def destroy
-    @todo_item.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to todo_list_todo_items_path(@todo_list), status: :see_other, notice: "Item deletado com sucesso" }
-      format.json { head :no_content }
-    end
+def destroy
+  
+  @todo_item.destroy
+  respond_to do |format|
+    format.html { redirect_to todo_list_path(@todo_list), notice: "Item excluído com sucesso." }
+    format.json { head :no_content }
   end
+end
 
   private
 
