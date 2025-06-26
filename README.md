@@ -43,6 +43,7 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 ```
 ## Índices
 
+0. [Dependências para execução](#inicializar-a-aplicação)
 1. [Criação da estrutura do projeto e as Gems](#criação-da-estrutura-e-gems)
 2. [Utilizando o scaffoding](#uso-de-scaffold)
 3. [Troca de banco](#troca-de-banco)
@@ -52,6 +53,55 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 7. [Novo método usado no destroy](#novo-método-adc-ao-destroy)
 8. [Criação de login](#para-criação-de-login)
 9. [Login no controller](#para-configurar-o-login-no-controller)
+
+## Inicializar a aplicação
+
+Para iniciar o app é necessário que sua versão ro ruby seja a 3.4.4, a versão do seu rails seja 7.1.5.
+Siga o passo a passo abaixo:
+
+### Intalação do da Gem bundler
+
+```bash
+
+gem install bundler
+
+```
+
+### instalar as dependências
+
+```bash
+
+bundle install
+
+```
+
+### Configure o banco em `database.yml`
+
+### Migre os dados do banco
+
+```bash
+
+rails db:create
+
+rails db:migrate
+
+```
+
+### Popule as seeds
+
+```bash
+
+rails db:seed
+
+```
+
+### Ligue o servidor 
+
+```bash
+
+rails s
+
+```
 
 ## Criação da estrutura, Gems e Tailwind
 
