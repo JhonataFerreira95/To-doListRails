@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :todo_lists do # Para seguir o padrão e aninha por ordem o todo_list a após o todo_items
     resources :todo_items
   end
