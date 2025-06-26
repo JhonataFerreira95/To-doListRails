@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
    devise_scope :user do
     root to: "devise/sessions#new" # Assim que iniciar o servidor vai direto para o login
-  end  
+  end 
   resources :todo_lists do # Para seguir o padrão e aninha por ordem o todo_list a após o todo_items
     resources :todo_items
   end
