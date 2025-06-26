@@ -50,6 +50,7 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 5. [Problemas com o TailwindCSS](#problemas-com-o-tailwindcss)
 6. [Problemas com rotas aninhadas](#problemas-com-as-rotas-aninhadas-no-todo_items)
 7. [Novo método usado no destroy](#novo-método-adc-ao-destroy)
+8. [Criação de login]
 
 ## Criação da estrutura, Gems e Tailwind
 
@@ -192,3 +193,46 @@ end
 ```
 Deixa claro que antes de executar o destroy, Rails executa os métodos `set_todo_list` para carregar a lista correta com base no `todo_list_id` da URL e `set_todo_item` para carregar o item correto dentro da lista
 
+## Para criação de login
+
+Foi utilizada a `gem devise` para a criação de login de forma simples, no `Gemfile` foi adicionada a nova gem, após isso usei o `bundle install` para instalação e para gera os arquivo do banco foi usado o `rails generate devise:install`. Criando o model do usuario e importanto com o `rails db:migrate`.
+
+### Gem
+
+```bash 
+
+gem 'devise'
+
+```
+
+### instalando...
+
+```bash
+
+bundle install
+
+```
+
+### Gerando arquivos
+
+```bash
+
+rails generate devise:install
+
+```
+
+### Criando o model do usuario
+
+```bash
+
+rails generate devise User
+
+```
+
+### migrrando o model para o banco
+
+```bash
+
+db:migrate
+
+```
