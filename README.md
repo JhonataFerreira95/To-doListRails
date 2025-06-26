@@ -56,7 +56,7 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 
 ## Inicializar a aplicação
 
-Para iniciar o app é necessário que sua versão ro ruby seja a 3.4.4, a versão do seu rails seja 7.1.5.
+Para iniciar o app é necessário que sua versão do ruby seja a 3.4.4, a versão do seu rails seja 7.1.5.
 Siga o passo a passo abaixo:
 
 ### Intalação do da Gem bundler
