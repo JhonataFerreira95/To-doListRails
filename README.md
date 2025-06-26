@@ -51,7 +51,7 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 6. [Problemas com rotas aninhadas](#problemas-com-as-rotas-aninhadas-no-todo_items)
 7. [Novo método usado no destroy](#novo-método-adc-ao-destroy)
 8. [Criação de login](#para-criação-de-login)
-9. [Login no controller]()
+9. [Login no controller](#para-configurar-o-login-no-controller)
 
 ## Criação da estrutura, Gems e Tailwind
 
