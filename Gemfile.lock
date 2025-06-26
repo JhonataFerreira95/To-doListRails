@@ -275,7 +275,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  devise (~> 4.9)
+  devise
   importmap-rails
   jbuilder
   pg (~> 1.5, >= 1.5.6)

@@ -16,7 +16,7 @@ gem "puma", ">= 5.0"
 
 # Use devise for authentication 
 
-gem 'devise', '~> 4.9'
+gem 'devise'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
