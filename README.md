@@ -115,7 +115,7 @@ rails new to-doListRails --database=postgres --css=tailwind
 
 ## Uso de Scaffolding
 
-O `scaffold` é um comando CLI do Rails para criar arquitetura MVC de uma forma simples e prática, aplicando diretamente, com base nos atributos infromados. No meu caso foi a criação de duas tabelas e uma enum com valor boolean para `true` e `false`. Por padrão o Scaffold usa o SQLITE e como foi pedido alterei para o postgres na próxima seção falo melhor osbre a mudança.
+O `scaffold` é um comando CLI do Rails para criar arquitetura MVC de uma forma simples e prática, aplicando diretamente, com base nos atributos infromados. No meu caso foi a criação de duas tabelas e uma enum com valor boolean para `true` e `false`. Por padrão o Scaffold usa o SQLITE e como foi pedido alterei para o postgres na próxima seção falo melhor sobre a mudança.
 
 ```bash
 
