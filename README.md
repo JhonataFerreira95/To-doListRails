@@ -50,7 +50,8 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 5. [Problemas com o TailwindCSS](#problemas-com-o-tailwindcss)
 6. [Problemas com rotas aninhadas](#problemas-com-as-rotas-aninhadas-no-todo_items)
 7. [Novo método usado no destroy](#novo-método-adc-ao-destroy)
-8. [Criação de login]
+8. [Criação de login](#para-criação-de-login)
+9. [Login no controller]()
 
 ## Criação da estrutura, Gems e Tailwind
 
@@ -242,5 +243,45 @@ db:migrate
 ```bash
 
 rails generate devise:views
+
+```
+
+## Para configurar o login no controller
+
+Foi até que tranquilo usando o devise, era só passar um `belongs_to :user` em `todo_list.rb` para indicar que tal item pertence a tal usuário, e um `has_many` em `user.rb`já que um usuário pode ter múltiplas listas de tarefas, após fui configurar o meu controller para que cada usuario só possa criar, editar ou excluir as lista com sua conta. Foi passado `current_user` antes de todos os métodos para garantir que o usuario mexa apenas em suas listas.
+
+### belongTO
+
+```bash
+
+class TodoList < ApplicationRecord
+    belongs_to :user
+    has_many:todo_items, dependent: :destroy # adc um has many para puxar os dados da tabela todo_items e um destroy para que a tarefa seja removida independete dos itens dentro dela
+    alias_attribute :items, :todo_items # adc um alias para fica mais simples a chamada da classe
+end
+
+```
+
+### has_many
+
+```bash
+
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  has_many :todo_lists, dependent: :destroy
+end
+
+```
+
+### current_user no index
+
+```bash
+
+  def index
+    @todo_lists = current_user.todo_lists.all # garante que cada usuário só veja as listas dele.
+  end
 
 ```
