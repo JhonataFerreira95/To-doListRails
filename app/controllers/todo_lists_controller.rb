@@ -1,30 +1,24 @@
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: %i[ show edit update destroy ]
 
-  # GET /todo_lists or /todo_lists.json
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = current_user.todo_lists.all
   end
 
-  # GET /todo_lists/1 or /todo_lists/1.json
   def show
     @todo_item = @todo_list.todo_items.build
-  @todo_items = @todo_list.todo_items.order(created_at: :asc)
+    @todo_items = @todo_list.todo_items.order(created_at: :asc)
   end
 
-  # GET /todo_lists/new
   def new
-    @todo_list = TodoList.new
+    @todo_list = current_user.todo_lists.new
   end
 
-  # GET /todo_lists/1/edit
   def edit
   end
 
-  # POST /todo_lists or /todo_lists.json
   def create
-    @todo_list = TodoList.new(todo_list_params)
-
+    @todo_list = current_user.todo_lists.build(todo_list_params)
     respond_to do |format|
       if @todo_list.save
         format.html { redirect_to @todo_list, notice: "item criado com sucesso" }
@@ -36,7 +30,6 @@ class TodoListsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /todo_lists/1 or /todo_lists/1.json
   def update
     respond_to do |format|
       if @todo_list.update(todo_list_params)
@@ -49,10 +42,8 @@ class TodoListsController < ApplicationController
     end
   end
 
-  # DELETE /todo_lists/1 or /todo_lists/1.json
   def destroy
     @todo_list.destroy!
-
     respond_to do |format|
       format.html { redirect_to todo_lists_path, status: :see_other, notice: "item deletado com sucesso" }
       format.json { head :no_content }
@@ -60,12 +51,11 @@ class TodoListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_todo_list
-      @todo_list = TodoList.find(params[:id])
+      @todo_list = current_user.todo_lists.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def todo_list_params
       params.require(:todo_list).permit(:name)
     end
