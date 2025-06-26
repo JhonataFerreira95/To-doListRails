@@ -195,7 +195,7 @@ Deixa claro que antes de executar o destroy, Rails executa os métodos `set_todo
 
 ## Para criação de login
 
-Foi utilizada a `gem devise` para a criação de login de forma simples, no `Gemfile` foi adicionada a nova gem, após isso usei o `bundle install` para instalação e para gera os arquivo do banco foi usado o `rails generate devise:install`. Criando o model do usuario e importanto com o `rails db:migrate`.
+Foi utilizada a `gem devise` para a criação de login de forma simples, no `Gemfile` foi adicionada a nova gem, após isso usei o `bundle install` para instalação e para gera os arquivo do banco foi usado o `rails generate devise:install`. Criando o model do usuario e importanto com o `rails db:migrate`, para gerar o templete foi usado o `rails generate devise:views`.
 
 ### Gem
 
@@ -229,10 +229,18 @@ rails generate devise User
 
 ```
 
-### migrrando o model para o banco
+### Migrrando o model para o banco
 
 ```bash
 
 db:migrate
+
+```
+
+### Gerando template
+
+```bash
+
+rails generate devise:views
 
 ```
