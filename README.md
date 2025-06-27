@@ -43,16 +43,16 @@ Como meu projeto em flask <code><img width="40" src="https://raw.githubuserconte
 ```
 ## Índices
 
-0. [Dependências para execução](#inicializar-a-aplicação)
-1. [Criação da estrutura do projeto e as Gems](#criação-da-estrutura-e-gems)
-2. [Utilizando o scaffoding](#uso-de-scaffold)
-3. [Troca de banco](#troca-de-banco)
-4. [Rollback de banco](#rollback-do-banco)
-5. [Problemas com o TailwindCSS](#problemas-com-o-tailwindcss)
-6. [Problemas com rotas aninhadas](#problemas-com-as-rotas-aninhadas-no-todo_items)
-7. [Novo método usado no destroy](#novo-método-adc-ao-destroy)
-8. [Criação de login](#para-criação-de-login)
-9. [Login no controller](#para-configurar-o-login-no-controller)
+00. [Dependências para execução](#inicializar-a-aplicação)
+01. [Criação da estrutura do projeto e as Gems](#criação-da-estrutura-e-gems)
+02. [Utilizando o scaffoding](#uso-de-scaffold)
+03. [Troca de banco](#troca-de-banco)
+04. [Rollback de banco](#rollback-do-banco)
+05. [Problemas com o TailwindCSS](#problemas-com-o-tailwindcss)
+06. [Problemas com rotas aninhadas](#problemas-com-as-rotas-aninhadas-no-todo_items)
+07. [Novo método usado no destroy](#novo-método-adc-ao-destroy)
+08. [Criação de login](#para-criação-de-login)
+09. [Login no controller](#para-configurar-o-login-no-controller)
 
 ## Inicializar a aplicação
 
